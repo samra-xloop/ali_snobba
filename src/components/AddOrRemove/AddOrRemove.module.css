@@ -1,0 +1,47 @@
+
+.addRemove {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to bottom, #F9EAD9, #DAAD76);
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: black;
+    text-shadow: 1px 1px 1px #888;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .minus, .plus, .trash {
+    color: black;
+    text-shadow: 1px 1px 1px #888;
+  }
+  
+  .minus:hover, .plus:hover, .trash:hover {
+    cursor: pointer;
+    color: #E49E73;
+  }
+  
+  .quantity {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 0px 12px
+  }
+  
+  .plus {
+    color: black;
+    text-shadow: 1px 1px 1px #888;
+  }
+  
+  .plus:hover {
+    cursor: pointer;
+    color: #DAAD76;
+  }
+  
+  .trash:hover {
+    cursor: pointer;
+    color: #F9EAD9;
+  }

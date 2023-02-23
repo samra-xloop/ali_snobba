@@ -1,0 +1,42 @@
+:root{
+    --greenBackground: #153535;
+    --golden: #DAAD76 ;
+    --color1: #E49E73;
+    --color2: #F9EAD9;
+    --color3: #DAAD76
+  }
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: var(--greenBackground);
+    color: white;
+  }
+  
+  .container div {
+    font-size: 48px;
+    font-weight: bold;
+  }
+  .container p{
+    margin-bottom: 20px;
+  }
+  .container a {
+    text-decoration: none;
+  }
+  
+  .container a button {
+    background-color: var(--golden);
+    color: var(--greenBackground);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .container a button:hover {
+    opacity: 0.8;
+  }
+  

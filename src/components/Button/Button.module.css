@@ -1,0 +1,22 @@
+button {
+  background: linear-gradient(to bottom, #f7d5ad, #e2aa66);
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: black;
+  text-shadow: 1px 1px 1px #888;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+  cursor: pointer;
+  background: linear-gradient(to bottom, #DAAD76, #F9EAD9);
+}
+
+button:active {
+  background: linear-gradient(to bottom, #F9EAD9, #DAAD76);
+  box-shadow: none;
+  transform: translateY(2px);
+}
