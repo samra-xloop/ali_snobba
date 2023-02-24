@@ -8,13 +8,15 @@ import { Navbar } from './components/Navbar/Navbar';
 import ShopContextProvider from './context/ShopContextProvider';
 
 const App = () => {
+
+  
   return (
     <div >
       <ShopContextProvider>
         <Router>
           <Navbar></Navbar>
           <Routes>
-            <Route path="/" element={<Products />} />
+            <Route path="/" element={<Products/>} />
             <Route path="/details/:id" element={<ProductDetail />} />
             <Route path="/cart" element={<ShoppingCart />} />
             <Route path="/thanks" element={<Thanks />} />

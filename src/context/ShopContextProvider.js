@@ -1,21 +1,32 @@
-import React, { createContext, useState } from 'react'
-import data from '../data/data'
+import React, { createContext, useState ,useEffect} from 'react'
+import useData from '../data/useData';
 
 export const ShopContext=createContext(null)
 
-
-const defaultCart=()=>{
+const defaultCart=(data)=>{
   let cart={};
+
   for (let i=1 ; i < data.length+1 ; i++){
     cart[i]=1;
   }
-  return cart
-}
+  return cart;
+};
+
 
 const ShopContextProvider = (props) => {
-  
-  const [cartItems, setCartItems] = useState(defaultCart()); 
-  const [qtn, setQtn]=useState(defaultCart());
+
+  const data = useData('http://localhost:5000/api/alisnobba/products');
+const [cartItems, setCartItems] = useState(defaultCart([])); 
+const [qtn, setQtn] = useState(defaultCart([]));
+
+useEffect(() => {
+  if (data) {
+    setCartItems(defaultCart(data));
+    setQtn(defaultCart(data));
+  }
+}, [data]);
+
+
   
 
   const qtnInc=(itemId)=>{
@@ -85,6 +96,13 @@ const ShopContextProvider = (props) => {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(data)
+    })
+    .then(response => {
+      if (response.ok) {
+        console.log("deleted succefully")
+      } else {
+        throw new Error('Delete request failed.');
+      }
     })
     .catch(error => {
       console.error(error);

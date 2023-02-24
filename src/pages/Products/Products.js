@@ -1,20 +1,12 @@
-import React, { useState } from 'react';
 import ProductCard from './ProductCard';
-
+import useData from '../../data/useData'
 const Products = () => {
-  const [data, setData] = useState([])
-  fetch("http://localhost:5000/api/alisnobba/products")
-    .then(response => response.json())
-    .then(data => {
-      setData(data)
-    })
-    .catch(e => {
-      console.log('I caught this', e)
-    })
-    
+
+  const data = useData('http://localhost:5000/api/alisnobba/products');
+
   return (
     <div>
-      {data.map((data) => {
+     {data?.map((data) => {
         return (
           <ProductCard key={data.id} data={data}></ProductCard>
         );

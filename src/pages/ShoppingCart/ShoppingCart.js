@@ -8,15 +8,23 @@ import { Link } from 'react-router-dom'
 const ShoppingCart = () => {
   const [cartItems, setCartItems] = useState([]);
 
-  const [data, setData] = useState([])
-  fetch("http://localhost:5000/api/alisnobba/products")
-    .then(response => response.json())
-    .then(data => {
-      setData(data)
-    })
-    .catch(e => {
-      console.log('I caught this', e)
-    })
+  const [data,setData] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:5000/api/alisnobba/products")
+      .then(res => res.json())
+      .then(
+        (result) => {
+          setData(result)
+        },
+        // Note: it's important to handle errors here
+        // instead of a catch() block so that we don't swallow
+        // exceptions from actual bugs in components.
+        (error) => {
+          
+        }
+      )
+  }, [])
 
   useEffect(() => {
     fetch('http://localhost:8000/api/cart')
